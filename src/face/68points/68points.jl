@@ -18,7 +18,7 @@ function proj_points(::Abstract68PointVentr, points::AbstractArray, beta_mat::Ab
     return X * B
 end
 
-function _raw_left_eye_openness(::Abstract3d68PointVentr, points::AbstractArray)
+function _raw_left_eye_openness(::Abstract68PointVentr, points::AbstractArray)
     # Some 68-point systems struggle with detecting the top of the eye, but
     # many 68-point systems tend to perform well at detecting eyebrow distance
     # from the bottom of the eye even in low lighting conditions, for those
@@ -32,7 +32,7 @@ function _raw_left_eye_openness(::Abstract3d68PointVentr, points::AbstractArray)
     _raw_openness(points, [20, 21], [42, 41])
 end
 
-_raw_right_eye_openness(::Abstract3d68PointVentr, points::AbstractArray) = (points, [24, 25], [48, 47])
+_raw_right_eye_openness(::Abstract68PointVentr, points::AbstractArray) = _raw_openness(points, [24, 25], [48, 47])
 
-_raw_mouth_openness(::Abstract3d68PointVentr, points::AbstractArray) = (points, [62, 63, 64], [68, 67, 66])
+_raw_mouth_openness(::Abstract68PointVentr, points::AbstractArray) = _raw_openness(points, [62, 63, 64], [68, 67, 66])
 
