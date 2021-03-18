@@ -12,7 +12,7 @@ function homogenize(coords::A)::A where {A <: AbstractArray}
     return reshape(out, new_dims_tup)
 end
 
-_raw_dist(points::AbstractArray, ind1, ind2) = norm(points[ind1] - points[ind2])
+_raw_dist(points::AbstractArray, ind1, ind2) = norm(points[:,ind1] - points[:,ind2])
 
 function _vec_angle(points::AbstractArray, ind1, ind2)
     a = points[:,ind1] .- points[:ind2]

@@ -29,12 +29,12 @@ function _raw_left_eye_openness(::Abstract68PointVentr, points::AbstractArray)
 
     # This approach might be less effective for people with less visible eyebrows
 
-    _raw_openness(points, [20, 21], [42, 41])
+    _raw_openness.((points,), [20, 21], [42, 41])
 end
 
-_raw_right_eye_openness(::Abstract68PointVentr, points::AbstractArray) = _raw_openness(points, [24, 25], [48, 47])
+_raw_right_eye_openness(::Abstract68PointVentr, points::AbstractArray) = _raw_openness.((points,), [24, 25], [48, 47])
 
-_raw_mouth_openness(::Abstract68PointVentr, points::AbstractArray) = _raw_openness(points, [62, 63, 64], [68, 67, 66])
+_raw_mouth_openness(::Abstract68PointVentr, points::AbstractArray) = _raw_openness.((points,), [62, 63, 64], [68, 67, 66])
 
 left_brow_angle(::Abstract68PointVentr, points::AbstractArray, baseline_p::AbstractArray) = _vec_angle(points, 18, 22)
 
