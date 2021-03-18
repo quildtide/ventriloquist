@@ -14,3 +14,8 @@ end
 
 _raw_dist(points::AbstractArray, ind1, ind2) = norm(points[ind1] - points[ind2])
 
+function _vec_angle(points::AbstractArray, ind1, ind2)
+    a = points[:,ind1] .- points[:ind2]
+    b = baseline_p[:,ind1] .- baseline_p[:,ind2]
+    return acosd((a ⋅ b) / (norm(a) * norm(b)))
+end

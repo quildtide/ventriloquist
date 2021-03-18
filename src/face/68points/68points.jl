@@ -36,3 +36,6 @@ _raw_right_eye_openness(::Abstract68PointVentr, points::AbstractArray) = _raw_op
 
 _raw_mouth_openness(::Abstract68PointVentr, points::AbstractArray) = _raw_openness(points, [62, 63, 64], [68, 67, 66])
 
+left_brow_angle(::Abstract68PointVentr, points::AbstractArray, baseline_p::AbstractArray) = _vec_angle(points, 18, 22)
+
+right_brow_angle(::Abstract68PointVentr, points::AbstractArray, baseline_p::AbstractArray) = _vec_angle(points, 23, 27)
